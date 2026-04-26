@@ -14,12 +14,16 @@
     <header class="header">
         <a href="#" class="logo">Mohammad</a>
 
-        <nav class="navbar">
+        <nav class="navbar" id="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
     </header>
 
     <section class="home" id="home">
@@ -197,6 +201,28 @@
 
         document.querySelectorAll('.animate-on-scroll').forEach(el => {
             observer.observe(el);
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
+                navbar.classList.remove('active');
+            }
         });
     </script>
 </body>
