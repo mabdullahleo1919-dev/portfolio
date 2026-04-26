@@ -1099,6 +1099,53 @@ body {
         width: 100%;
         height: 45px;
     }
+    
+    /* Enhanced Contact Info Responsive */
+    .contact-container {
+        gap: 25px;
+    }
+    
+    .contact-info {
+        padding: 20px;
+    }
+    
+    .info-item {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .info-item i {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+    
+    .info-item > div {
+        min-width: 0;
+        flex: 1;
+    }
+    
+    .info-item h4 {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+    
+    .info-item span {
+        font-size: 13px;
+        word-break: break-word;
+    }
+    
+    .contact-social {
+        gap: 12px;
+    }
+    
+    .contact-social a {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
 }
 
 /* Small Phones (below 576px) */
@@ -1277,6 +1324,58 @@ body {
     
     .info-box {
         padding: 12px;
+    }
+    
+    /* Extra Small Contact */
+    .contact .heading {
+        font-size: 24px;
+    }
+    
+    .contact-info {
+        padding: 15px;
+    }
+    
+    .contact-info h3 {
+        font-size: 18px;
+    }
+    
+    .contact-info > p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    
+    .info-item {
+        gap: 10px;
+    }
+    
+    .info-item i {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    
+    .info-item h4 {
+        font-size: 11px;
+    }
+    
+    .info-item span {
+        font-size: 12px;
+    }
+    
+    .contact-social a {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+    
+    .contact-form {
+        padding: 0 5px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 13px;
     }
 }
 
