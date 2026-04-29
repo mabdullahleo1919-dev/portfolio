@@ -29,7 +29,7 @@
     <section class="home" id="home">
         <div class="home-content animate-on-scroll">
             <h1>Hi, I'm Mohammad Abdullah</h1>
-            <h3>python Developer</h3>
+            <h3 class="typing-text">Python Developer</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, voluptatibus. Id numquam, maiores obcaecati architecto voluptas voluptate, facere iusto asperiores accusomus dignissimos quibusdam voluptates, exercitationem reprehenderit eaque.</p>
             <div class="btn-box">
                 <a href="#">Hire Me</a>
@@ -40,7 +40,6 @@
             <img src="abd1919.jpg" alt="Mohammad Abdullah">
         </div>
         <div class="home-sci animate-on-scroll">
-            <a href="https://instagram.com/abdull4h1919" target="_blank"><i class='bx bxl-instagram'></i></a>
             <a href="#"><i class='bx bxl-github'></i></a>
             <a href="#"><i class='bx bxl-linkedin'></i></a>
             <a href="mailto:mabdullahleo1919@gmail.com"><i class='bx bxl-gmail'></i></a>
@@ -57,7 +56,7 @@
         </div>
         
         <div class="about-content animate-on-scroll slide-right">
-            <h3>Python Developer</h3>
+            <h3 class="typing-text">Python Developer</h3>
             <p>I am a passionate Python Developer with expertise in building efficient and scalable applications. I specialize in backend development, data analysis, and automation. With a strong foundation in Python and its frameworks, I create robust solutions that solve real-world problems. My goal is to deliver high-quality code while continuously learning and adapting to new technologies.</p>
             
             <div class="about-info">
@@ -222,6 +221,29 @@
             if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
                 navbar.classList.remove('active');
             }
+        });
+
+        // Text Reveal Animation for Python Developer (Runs Once)
+        const textElements = document.querySelectorAll('.typing-text');
+        
+        textElements.forEach((element, index) => {
+            const text = element.getAttribute('data-text') || element.textContent;
+            element.textContent = '';
+            element.setAttribute('data-text', text);
+            
+            let charIndex = 0;
+            const typeSpeed = 80;
+            
+            function typeText() {
+                if (charIndex < text.length) {
+                    element.textContent += text.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeText, typeSpeed);
+                }
+            }
+            
+            // Start with delay, run only once
+            setTimeout(typeText, 1000 + (index * 500));
         });
     </script>
 </body>
